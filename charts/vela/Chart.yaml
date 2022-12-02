@@ -1,0 +1,7 @@
+apiVersion: v2
+name: vela-system
+version: 1.0.0
+dependencies:
+  - name: vela-core
+    version: 1.6.3
+    repository:  https://kubevelacharts.oss-accelerate.aliyuncs.com/core
