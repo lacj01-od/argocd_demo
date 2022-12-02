@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  project: default
+  source:
+    path: allapps/
+    repoURL: https://github.com/lacj01-od/argocd_demo
+    targetRevision: HEAD
+    branch: argo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
