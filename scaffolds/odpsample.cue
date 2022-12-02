@@ -14,10 +14,10 @@ template: {
 		spec: {
 			selector: matchLabels: "app.oam.dev/component": parameter.name
 			template: {
-				metadata: labels: "app.oam.dev/component": parameter.image
+				metadata: labels: "app.oam.dev/component": parameter.name
 				spec: containers: [{
-					name:  "name"
-					image: "image"
+					name:  parameter.name
+					image: parameter.image
 				}]
 			}
 		}
