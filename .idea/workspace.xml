@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6f547d7-da7a-400f-9ce5-a7591282e6a9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/allapps/templates/plateng.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allapps/templates/demoapp.yml" beforeDir="false" afterPath="$PROJECT_DIR$/allapps/templates/demoapp.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +185,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670001338653</updated>
       <workItem from="1670001340010" duration="4220000" />
-      <workItem from="1670017128888" duration="1299000" />
+      <workItem from="1670017128888" duration="2837000" />
     </task>
     <servers />
   </component>
