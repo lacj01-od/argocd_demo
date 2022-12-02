@@ -1,6 +1,6 @@
 dependencies:
-- name: `ingress-nginx`
-  repository: https://kubernetes.github.io/ingress-nginx
-  version: 4.4.0
-digest: sha256:6763b616d667fdb85c35b1cdd6c46263c2034b950a8b78e85ad31f64954177ab
-generated: "2022-12-01T15:38:04.1831835-06:00"
+- name: vela-core
+  repository: https://kubevelacharts.oss-accelerate.aliyuncs.com/core
+  version: 1.6.3
+digest: sha256:be9ef44bd2f180fda0465a506c4ba542709c16e2a29350842ad1ec1536f82050
+generated: "2022-12-02T12:40:37.4035668-06:00"
