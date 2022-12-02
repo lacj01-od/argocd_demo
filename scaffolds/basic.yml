@@ -1,0 +1,16 @@
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+spec:
+  selector:
+    matchLabels:
+      "app.oam.dev/component": "name"
+  template:
+    metadata:
+      labels:
+        "app.oam.dev/component": "name"
+    spec:
+      containers:
+        - name: "name"
+          image: "image"
+...
