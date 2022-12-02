@@ -7,13 +7,12 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: argocd
   project: default
   source:
     path: allapps/
     repoURL: https://github.com/lacj01-od/argocd_demo
-    targetRevision: HEAD
-    branch: argo
+    targetRevision: argo
   syncPolicy:
     automated:
       prune: true
