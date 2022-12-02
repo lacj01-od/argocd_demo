@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6f547d7-da7a-400f-9ce5-a7591282e6a9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/allapps/templates/vela.yml" beforeDir="false" afterPath="$PROJECT_DIR$/allapps/templates/vela.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
