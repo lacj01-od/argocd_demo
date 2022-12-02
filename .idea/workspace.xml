@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6f547d7-da7a-400f-9ce5-a7591282e6a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/allapps/templates/vela.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allapps/templates/vela.yml" beforeDir="false" afterPath="$PROJECT_DIR$/allapps/templates/vela.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,10 +30,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/p/poc/lacj01_poc_argocd_demo/allapps/templates",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/p/poc/lacj01_poc_argocd_demo",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.proportion": "0.14941406",
+    "project.structure.side.proportion": "0.31724137"
   }
 }]]></component>
   <component name="RecentsManager">

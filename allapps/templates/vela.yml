@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vela-system
+  name: kubevela
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -10,7 +10,7 @@ spec:
     namespace: vela-system
   project: default
   source:
-    path: charts/vela-system
+    path: charts/vela
     repoURL: https://github.com/lacj01-od/argocd_demo
     targetRevision: bootstrap
   syncPolicy:
