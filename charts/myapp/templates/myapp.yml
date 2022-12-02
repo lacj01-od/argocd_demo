@@ -8,4 +8,4 @@ spec:
       type: webservice
       properties:
         image:  bootstrap:5577/mytstapp:latest
-        port: 8000
+        port: 8081
