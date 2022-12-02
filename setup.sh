@@ -81,7 +81,7 @@ if [ ! -e /root/running ] ; then
   for k in "${!waitlist[@]}"; do
     waitforit "${waitlist[$k]}" "$k"
   done
-  helm install --create-namespace -n vela-system kubevela kubevela/vela-core
+  helm install --create-namespace -n vela-system kubevela /charts/vela
   waitforit vela-system deployments.apps/kubevela-cluster-gateway
   waitforit vela-system deployments.apps/kubevela-vela-core
   echo RUNNING > /root/running
