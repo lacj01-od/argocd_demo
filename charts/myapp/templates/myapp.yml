@@ -8,3 +8,4 @@ spec:
       type: odpsample
       properties:
         image:  bootstrap:5577/mytstapp:latest
+        name: myexpresserver
