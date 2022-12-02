@@ -5,7 +5,6 @@ metadata:
 spec:
   components:
     - name: express-server
-      type: webservice
+      type: odpsample
       properties:
         image:  bootstrap:5577/mytstapp:latest
-        port: 8081
