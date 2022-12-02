@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/lacj01_poc_argocd_demo.iml" filepath="$PROJECT_DIR$/lacj01_poc_argocd_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/argocd_demo_app.iml" filepath="$PROJECT_DIR$/argocd_demo_app.iml" />
     </modules>
   </component>
 </project>
