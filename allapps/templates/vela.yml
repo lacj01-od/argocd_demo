@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vela-system
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: vela-system
+  project: default
+  source:
+    path: charts/vela-system
+    repoURL: https://github.com/lacj01-od/argocd_demo
+    targetRevision: bootstrap
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
