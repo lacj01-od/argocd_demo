@@ -1,19 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: allapps
+  namespace: svc-one-apps
+  name: demo-app
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: argo-cd
-  project: default
+    namespace: demoapp
+  project: svc-one
   source:
-    path: allapps/
+    path: charts/myapp
     repoURL: https://github.com/lacj01-od/argocd_demo
-    targetRevision: argo
+    targetRevision: testapp
   syncPolicy:
     automated:
-      prune: true
+      prune: false
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

@@ -1,18 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-cd
+  name: allapps
+  namespace: sysproject-apps
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: argo-cd
-  project: default
+  project: sysproject
   source:
-    path: charts/argo-cd
+    path: allapps/
     repoURL: https://github.com/lacj01-od/argocd_demo
-    targetRevision: bootstrap
+    targetRevision: argo
   syncPolicy:
     automated:
       prune: true

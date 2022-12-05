@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sysproject-apps
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: svc-one-apps
+...

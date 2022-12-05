@@ -1,24 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubevela
+  namespace: sysproject-apps
+  name: platformeng
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: vela-system
-  project: default
+  project: sysproject
   source:
-    path: charts/vela
+    path: charts/platformeng
     repoURL: https://github.com/lacj01-od/argocd_demo
-    targetRevision: bootstrap
+    targetRevision: plateng
   syncPolicy:
     automated:
-      prune: true
+      prune: false
       selfHeal: true
-  ignoreDifferences:
-    - group: apiregistration.k8s.io
-      kind: APIService
-      jsonPointers:
-        - /spec/insecureSkipTLSVerify
+    syncOptions:
+      - CreateNamespace=true

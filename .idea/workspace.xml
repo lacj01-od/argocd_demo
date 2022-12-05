@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6f547d7-da7a-400f-9ce5-a7591282e6a9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allapps/templates/plateng.yml" beforeDir="false" afterPath="$PROJECT_DIR$/allapps/templates/plateng.yml" afterDir="false" />
-    </list>
+    <list default="true" id="d6f547d7-da7a-400f-9ce5-a7591282e6a9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,10 +32,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/p/poc/argodemo/argocd_demo_app/allapps/templates",
+    "last_opened_file_path": "C:/p/poc/argodemo/app_of_app",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.14941406",
-    "project.structure.side.proportion": "0.31724137"
+    "project.structure.side.proportion": "0.31724137",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -48,6 +46,12 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="OPA_RUN_CONFIGURATION" factoryName="Opa configuration factory">
+      <option name="query" value="" />
+      <option name="additionalargs" value="" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -109,12 +113,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="OPA_RUN_CONFIGURATION" factoryName="Opa configuration factory">
-      <option name="query" value="" />
-      <option name="additionalargs" value="" />
-      <envs />
-      <method v="2" />
     </configuration>
     <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -186,6 +184,7 @@
       <updated>1670001338653</updated>
       <workItem from="1670001340010" duration="4220000" />
       <workItem from="1670017128888" duration="3424000" />
+      <workItem from="1670256750697" duration="13000" />
     </task>
     <servers />
   </component>
