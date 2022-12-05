@@ -3,7 +3,9 @@ argo-cd:
     enabled: false
   server:
     extraArgs:
-      - --insecure
+      - "--insecure"
+      - "--application-namespaces"
+      - "*-apps"
     config:
       repositories: |
         - type: helm
