@@ -81,6 +81,7 @@ if [ ! -e /root/running ] ; then
   for k in "${!waitlist[@]}"; do
     waitforit "${waitlist[$k]}" "$k"
   done
+  helm dependency build /charts/vela
   helm install --create-namespace -n vela-system kubevela /charts/vela
   waitforit vela-system deployments.apps/kubevela-cluster-gateway
   waitforit vela-system deployments.apps/kubevela-vela-core
@@ -104,5 +105,5 @@ wait $DOCKERD
 # docker create --name initcontainer -v myconfig:/data alpine:latest
 # docker cp creds.json initcontainer:/data/
 # docker rm initcontainer
-# docker run -it --rm --privileged -v myconfig:/data -p 8088:8080 -p 12376:12376 --ulimit nofile=262144:262144 mytest:latest
+# docker run -it --rm --privileged -v myconfig:/data -p 8088:8080 -p 12376:12376 -p 5577:5577 --ulimit nofile=262144:262144 mytest:latest
 
