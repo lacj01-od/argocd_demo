@@ -12,9 +12,25 @@ func main() {
 	if !present {
 		value = "No Value"
 	}
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	web := &http.ServeMux{}
+	health := &http.ServeMux{}
+
+	web.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Saying Hello with %s ", value)
 	})
+	health.HandleFunc("/health", func(writer http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(writer, `{ "status" : "200" }`)
+	})
 
-	log.Fatal(http.ListenAndServe(":8081", nil))
+	go func() {
+		err := http.ListenAndServe(":8081", web)
+		if err != nil {
+			log.Fatal(err)
+		}
+	}()
+
+	err := http.ListenAndServe(":8080", health)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
