@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: first-vela-app
   labels:
-    abc: {{ .Values.message }}
+    abc: "{{ .Values.message }}"
 spec:
   components:
     - name: express-server
