@@ -12,9 +12,10 @@ spec:
   project: svc-one
   source:
     path: charts/myapp
-    repoURL: https://github.com/lacj01-od/argocd_demo
+    repoURL: https://github.com/lacj01-od/argocd_demo.git
     targetRevision: testapp
-    chart: demoapp
+    helm:
+      releaseName: blabla
   syncPolicy:
     automated:
       prune: false
