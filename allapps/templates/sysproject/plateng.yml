@@ -16,7 +16,7 @@ spec:
     targetRevision: plateng
   syncPolicy:
     automated:
-      prune: false
+      prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true

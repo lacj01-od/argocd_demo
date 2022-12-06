@@ -14,11 +14,9 @@ spec:
     path: charts/myapp
     repoURL: https://github.com/lacj01-od/argocd_demo.git
     targetRevision: testapp
-    helm:
-      releaseName: blabla
   syncPolicy:
     automated:
-      prune: false
-      selfHeal: false
+      prune: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true

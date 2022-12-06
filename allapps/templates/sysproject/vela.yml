@@ -21,5 +21,9 @@ spec:
   ignoreDifferences:
     - group: apiregistration.k8s.io
       kind: APIService
+      # Added this as for some reason the only value is false
+      # And when it's set to false, it will be removed as it's the only value.
+      # In any case, the helm chart set's this to false and then it disapears
+      # as false is the default value.
       jsonPointers:
         - /spec/insecureSkipTLSVerify

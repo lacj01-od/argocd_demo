@@ -4,12 +4,12 @@ metadata:
   name: svc-one
   namespace: argo-cd
 spec:
-  clusterResourceWhitelist:
-    - group: '*'
-      kind: '*'
+  namespaceResourceWhitelist:
+    - group: core.oam.dev
+      kind: Application
   destinations:
-    - namespace: '*'
-      server: '*'
+    - namespace: 'demoapp'
+      server: 'in-cluster'
   sourceRepos:
     - '*'
   sourceNamespaces:
