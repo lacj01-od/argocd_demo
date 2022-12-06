@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: first-vela-app
   labels:
-    my.app/xyz: 1
+    abc: baba
 spec:
   components:
     - name: express-server
