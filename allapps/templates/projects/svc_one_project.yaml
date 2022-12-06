@@ -9,7 +9,7 @@ spec:
       kind: Application
   destinations:
     - namespace: 'demoapp'
-      server: 'in-cluster'
+      server: 'https://kubernetes.default.svc'
   sourceRepos:
     - '*'
   sourceNamespaces:
