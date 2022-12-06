@@ -14,6 +14,7 @@ spec:
     path: charts/myapp
     repoURL: https://github.com/lacj01-od/argocd_demo
     targetRevision: testapp
+    chart: demoapp
   syncPolicy:
     automated:
       prune: false
