@@ -9,3 +9,16 @@ spec:
       properties:
         image: bootstrap:5577/mytstapp:latest
         name: myexpresserver
+
+  policies:
+    - name: minikube
+      type: topology
+      properties:
+        clusters: [ "minikube" ]
+
+  workflow:
+    steps:
+      - name: deploy
+        type: deploy-minikube
+        properties:
+          policies: [ "minikube" ]
