@@ -85,6 +85,13 @@ if [ ! -e /root/running ] ; then
   helm install --create-namespace -n vela-system kubevela /charts/vela
   waitforit vela-system deployments.apps/kubevela-cluster-gateway
   waitforit vela-system deployments.apps/kubevela-vela-core
+  # Switch resource tracking method
+  # this is to deal with vela generating resources
+  kubectl patch configmap/argocd-cm \
+    -n argo-cd \
+    --type merge \
+    -p '{"data":{"application.resourceTrackingMethod":"annotation"}}'
+
   echo RUNNING > /root/running
 else
   for k in "${!waitlist[@]}"; do
