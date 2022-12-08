@@ -8,4 +8,9 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: svc-one-apps
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: demoapp
 ...
