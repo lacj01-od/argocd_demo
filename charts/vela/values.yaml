@@ -2,4 +2,4 @@ vela-core:
   multicluster:
     clusterGateway:
       secureTLS:
-        enabled: true
+        enabled: false

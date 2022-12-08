@@ -2,7 +2,6 @@
 
 
 declare -A waitlist
-waitlist['deployments.apps/argo-rollouts']='argo-rollouts'
 waitlist['deployments.apps/argo-cd-argocd-server']='argo-cd'
 waitlist['deployments.apps/argo-cd-argocd-redis']='argo-cd'
 waitlist['deployments.apps/argo-cd-argocd-applicationset-controller']='argo-cd'
@@ -47,37 +46,10 @@ if [ ! -e /root/running ] ; then
   helm repo update
   echo "Waiting on metric server to start..."
   waitforit kube-system deployment/metrics-server
-  helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-  helm dependency build /charts/ingress-nginx
-  helm upgrade ingress-nginx /charts/ingress-nginx --install --namespace ingress-nginx --create-namespace
-
   helm repo add argo https://argoproj.github.io/argo-helm
   helm dependency build /charts/argo-cd
   helm upgrade argo-cd ./charts/argo-cd --install --namespace argo-cd --create-namespace
 
-  if [ -e /data/creds.json ] ; then
-    up uxp install
-    kubectl create secret generic azure-creds -n upbound-system --from-file=creds=/data/creds.json
-    while ! kubectl  wait --for condition=established --timeout=600s crd/providers.pkg.crossplane.io; do
-      echo waiting on provider crd
-      sleep 10
-    done
-    # Installing the provider package. This will create a new CRD for the config
-    kubectl apply -f /config/crossplane-config.yml
-    while ! kubectl  wait --for condition=established --timeout=600s crd/providerconfigs.azure.upbound.io; do
-      echo waiting on providerconfig crd
-      sleep 10
-    done
-    # Configure the providers
-    kubectl apply -f /config/crossplane-provider-config.yml
-    # Grant the kubernetes provider full cluster control (might need to wait for it?)
-    SA=$(kubectl -n upbound-system get sa -o name | grep provider-kubernetes | sed -e 's|serviceaccount\/|upbound-system:|g')
-    kubectl create clusterrolebinding provider-kubernetes-admin-binding --clusterrole cluster-admin --serviceaccount="${SA}"
-  else
-    echo Not installing crossplane azure as creds do not exist.
-  fi
-  kubectl create namespace argo-rollouts
-  kubectl apply -n argo-rollouts -f https://github.com/argoproj/argo-rollouts/releases/latest/download/install.yaml
   for k in "${!waitlist[@]}"; do
     waitforit "${waitlist[$k]}" "$k"
   done
@@ -112,5 +84,6 @@ wait $DOCKERD
 # docker create --name initcontainer -v myconfig:/data alpine:latest
 # docker cp creds.json initcontainer:/data/
 # docker rm initcontainer
-# docker run -it --rm --privileged -v myconfig:/data -p 8088:8080 -p 12376:12376 -p 5577:5577 --ulimit nofile=262144:262144 mytest:latest
+# create kubenet --subnet  172.18.0.0/16 --gateway 172.18.0.1
+# docker run -it --rm --privileged  --ip 172.18.0.10 --network kubenet --name mk8s -v myconfig:/data -p 8088:8080 -p 12376:12376 -p 5577:5577 --ulimit nofile=262144:262144 mytest:latest
 
