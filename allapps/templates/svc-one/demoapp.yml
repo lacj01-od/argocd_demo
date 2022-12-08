@@ -13,7 +13,7 @@ spec:
   source:
     path: charts/myapp
     repoURL: https://github.com/lacj01-od/argocd_demo.git
-    targetRevision: testapp
+    targetRevision: testapp_minimal
   syncPolicy:
     automated:
       prune: true
