@@ -13,7 +13,7 @@ spec:
   source:
     path: charts/vela
     repoURL: https://github.com/lacj01-od/argocd_demo
-    targetRevision: bootstrap
+    targetRevision: bootstrap_minimal
   syncPolicy:
     automated:
       prune: true
